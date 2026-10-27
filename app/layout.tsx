@@ -1,3 +1,8 @@
+import "./globals.css";
+import { CartProvider } from "./features/cart/cart.context";
+import CartIndicator from "./components/cartIndicator";
+import Navbar from "./components/Navbar";
+
 export default function RootLayout({
   children,
 }: {
@@ -6,25 +11,17 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body>
-        {/* HEADER */}
-        <header style={{ padding: "16px", borderBottom: "1px solid #ddd" }}>
-          <h1>Ecommerce</h1>
+        <CartProvider>
+          <Navbar />
+          {/* CONTENIDO DINÁMICO */}
+          <main className="flex-1 space-y-12 pb-16">
+            <div className="">{children}</div>
+          </main>
 
-          <nav style={{ display: "flex", gap: "16px" }}>
-            <a href="/">Home</a>
-            <a href="/products">Productos</a>
-          </nav>
-        </header>
-
-        {/* CONTENIDO DINÁMICO */}
-        <main style={{ padding: "24px" }}>
-          {children}
-        </main>
-
-        {/* FOOTER */}
-        <footer style={{ padding: "16px", borderTop: "1px solid #ddd" }}>
-          <p>© 2026 Ecommerce</p>
-        </footer>
+          <footer style={{ padding: "16px", borderTop: "1px solid #ddd" }}>
+            <p>© 2026 Ecommerce</p>
+          </footer>
+        </CartProvider>
       </body>
     </html>
   );

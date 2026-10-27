@@ -2,9 +2,12 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section>
-        <h2>Bienvenido a nuestro Ecommerce</h2>
-        <p>Las mejores ofertas en un solo lugar</p>
+
+      <section className="text-zinc-900 bg-lime-400 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2>Bienvenido a nuestro Ecommerce</h2>
+          <p>Las mejores ofertas en un solo lugar</p>
+        </div>
       </section>
 
       {/* CATEGORÍAS */}
@@ -19,9 +22,7 @@ export default function HomePage() {
 
       {/* CTA */}
       <section style={{ marginTop: "32px" }}>
-        <a href="/products">
-          👉 Ver todos los productos
-        </a>
+        <a href="/products">👉 Ver todos los productos</a>
       </section>
     </>
   );
