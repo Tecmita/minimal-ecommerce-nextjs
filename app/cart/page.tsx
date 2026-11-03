@@ -1,5 +1,6 @@
 "use client";
 import { useCart } from "../features/cart/cart.context";
+import Link from "next/link";
 
 const CartPage = () => {
   const { state, dispatch } = useCart();
@@ -33,6 +34,7 @@ const CartPage = () => {
             >
               -
             </button>
+            <Link href="/checkout">Proceder al pago</Link>
           </div>
         ))}
       </div>
